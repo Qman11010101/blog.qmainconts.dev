@@ -1,39 +1,3 @@
-body {
-    background-color: #418d45;
-    font-family: "Noto Sans JP", sans-serif;
-}
-
-/* ヘッダ */
-
-header {
-    width: 100%;
-    padding: 20px;
-    background-color: #333333;
-    color: #eeeeee;
-}
-
-header div {
-    width: fit-content;
-    margin: 0 auto;
-    font-size: 2.3em;
-    font-family: "Play", sans-serif;
-}
-
-@media screen and (max-width: 500px) {
-    header div {
-        font-size: 1.8em;
-    }
-}
-
-/* メイン部分 */
-
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-}
-
 /* 記事部分 */
 
 #maincol {
