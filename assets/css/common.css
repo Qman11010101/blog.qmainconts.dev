@@ -98,6 +98,34 @@ main {
     font-size: 0.8em;
 }
 
+/* 最近の記事 */
+
+.recent {
+    margin: 5px 0;
+}
+
+.recent-date {
+    color: #555555;
+}
+
+.recent-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+.recent-title a {
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+    transition-duration: .2s;
+}
+
+.recent-title a:hover {
+    color: #0088cc;
+    transition-duration: .2s;
+}
+
 /* メイン部分 */
 
 #maincol {
