@@ -12,11 +12,16 @@ header {
     color: #eeeeee;
 }
 
-header div {
+#blogtitle {
     width: fit-content;
     margin: 0 auto;
     font-size: 2.3em;
     font-family: "Play", sans-serif;
+}
+
+#blogtitle a {
+    color: #eeeeee;
+    text-decoration: none;
 }
 
 header p {
@@ -25,7 +30,7 @@ header p {
 }
 
 @media screen and (max-width: 500px) {
-    header div {
+    #blogtitle {
         font-size: 1.8em;
     }
 }
