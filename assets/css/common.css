@@ -35,7 +35,7 @@ header p {
     }
 }
 
-/* メイン部分 */
+/* 本体 */
 
 main {
     display: flex;
@@ -44,11 +44,9 @@ main {
     align-items: flex-start;
 }
 
-/* ウィジェット部分 */
+/* 共通利用ボックス */
 
-#subcol {
-    margin: 20px 10px;
-    width: 360px;
+.box {
     background-color: #dddddd;
     color: #333333;
     padding: 20px;
@@ -57,9 +55,36 @@ main {
 }
 
 @media screen and (max-width: 1100px) {
+    .box {
+        box-sizing: border-box;
+    }
+}
+
+/* メイン部分 */
+
+#maincol {
+    margin: 20px 10px;
+    width: min(max(calc(100vw - 1000px), 700px), 1000px);
+}
+
+@media screen and (max-width: 1100px) {
+    #maincol {
+        margin: 10px 10px 5px;
+        width: min(calc(100% - 20px), 700px);
+    }
+}
+
+/* ウィジェット部分 */
+
+#subcol {
+    margin: 20px 10px;
+    width: 360px;
+}
+
+@media screen and (max-width: 1100px) {
     #subcol {
-        width: min(100%, 700px);
         margin: 5px 10px 10px;
+        width: min(100%, 700px);
     }
 }
 
@@ -129,26 +154,6 @@ main {
 .recent-title a:hover {
     color: #0088cc;
     transition-duration: .2s;
-}
-
-/* メイン部分 */
-
-#maincol {
-    margin: 20px 10px;
-    width: min(max(calc(100vw - 1000px), 700px), 1000px);
-    background-color: #dddddd;
-    color: #333333;
-    padding: 20px;
-    border-radius: 20px;
-}
-
-@media screen and (max-width: 1100px) {
-    #maincol {
-        width: min(calc(100% - 20px), 700px);
-        margin: 10px 10px 5px;
-        border-radius: 20px;
-        box-sizing: border-box;
-    }
 }
 
 /* フッター */
