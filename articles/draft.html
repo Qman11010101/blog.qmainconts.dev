@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Qman's Diary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Play:wght@700&&family=Source+Code+Pro&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/destyle.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <script>
+        async function teks() {
+            const pre_query = window.location.search.substring(1).split("&");
+            let query = {};
+            for (i = 0; i < pre_query.length; i++) {
+                let kvList = pre_query[i].split("=");
+                let k = kvList[0]; let v = kvList[1];
+                query[k] = v;
+            }
+            
+            const fdata = await fetch("https://blog-wrap.qmc.workers.dev?id=" + query["id"] + "&draftKey=" + query["draft"]);
+            const r = await fdata.json();
+
+            const article = document.getElementById("articletitle");
+            title.innerText = r.title;
+            
+            const body = document.getElementById("atcbody");
+            const atcbodies = r.body;
+
+            for (let i = 0; i < atcbodies.length; i++) {
+                body.innerHTML += atcbodies[i].body;
+            }
+        }
+        window.addEventListener("load", teks);
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="blogtitle"><a href="../index.html">Qman's Diary</a></div>
+        <p>多趣味人間の備忘録</p>
+    </header>
+    <main>
+        <section id="maincol">
+            <section class="box">
+                <div class="date">2024-11-24</div>
+                <h1 id="articletitle"></h1>
+                <div id="tags">
+                    <div class="tag"><img src="../assets/tag.svg" alt="タグ" width="18" height="18"></div>
+                    <div class="tag"><a href="#"></a>下書き</div>
+                </div>
+                <article id="atcbody">
+                    
+                </article>
+            </section>
+        </section>
+        <section id="subcol">
+            <section class="box">
+                <div class="subcolbtn">
+                    <a href="https://qmainconts.dev/"></a>
+                    >> キューマンのコンテンツ置き場
+                </div>
+                <section class="widgetgroup">
+                    <div class="widgetindex">Profile</div>
+                    <p>オタクコンテンツで命を繋いでいる</p>
+                </section>
+                <section class="widgetgroup">
+                    <div class="widgetindex">Accounts</div>
+                    <ul>
+                        <li>Twitter: <a href="https://twitter.com/QmanEnobikto" target="_blank">@QmanEnobikto</a>
+                        </li>
+                        <li>GitHub: <a href="https://github.com/Qman11010101" target="_blank">Qman110101</a></li>
+                        <li>カクヨム: <a href="https://kakuyomu.jp/users/QmanEnobikto" target="_blank">QmanEnobikto</a>
+                        </li>
+                        <li>Qiita: <a href="https://qiita.com/KjumanEnobikto" target="_blank">@KjumanEnobikto</a>
+                        </li>
+                        <li>Zenn: <a href="https://zenn.dev/kjumanenobikto" target="_blank">@kjumanenobikto</a></li>
+                    </ul>
+                </section>
+                <section class="widgetgroup">
+                    <div class="widgetindex">Category</div>
+                    <div id="categorydisplay">
+                        <div class="tag"><a href="#"></a>お知らせ<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>技術<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>ゲーム<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>音楽ゲーム<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>CHUNITHM<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>Arcaea<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>Phigros<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>Rotaeno<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>エロゲー<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>ゆずソフト<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>PRINCIPIA<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>Laplacian<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>日記/週記<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>Advent Calendar<span class="tagcnt">(16)</span></div>
+                        <div class="tag"><a href="#"></a>JavaScript<span class="tagcnt">(16)</span></div>
+
+                    </div>
+                </section>
+                <section class="widgetgroup" id="recent">
+                    <div class="widgetindex">Recent Articles</div>
+                    <div id="recent-articles">
+                        <div class="recent">
+                            <div class="recent-date">2029-04-01</div>
+                            <div class="recent-title"><a href="articles/sample.html">SEGA音ゲーの話</a></div>
+                        </div>
+                        <div class="recent">
+                            <div class="recent-date">2029-04-01</div>
+                            <div class="recent-title"><a href="articles/sample.html">最近のゲーム</a></div>
+                        </div>
+                        <div class="recent">
+                            <div class="recent-date">2029-04-01</div>
+                            <div class="recent-title"><a href="articles/sample.html">Rustの話</a></div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>当ホームページに記載されている会社名・製品名・システム名などは、各社の登録商標、もしくは商標です。</p>
+        <p>© 2022 Kjuman Enobikto All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+</body>
+
+</html>
