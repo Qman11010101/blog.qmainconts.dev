@@ -26,8 +26,3 @@
     color: #0088cc;
     transition-duration: .2s;
 }
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-}
