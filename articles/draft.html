@@ -37,7 +37,7 @@
                 let tagLink = tag.appendChild(document.createElement("a"));
                 tagLink.href = "categories/" + categories[i].id;
                 let tagName = tag.appendChild(document.createElement("span"));
-                tagName.innertext += categories[i].name;
+                tagName.innerText = categories[i].name;
             }
 
             const title = document.getElementById("articletitle");
