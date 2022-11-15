@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../assets/css/destyle.css">
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script>
         async function teks() {
             const pre_query = window.location.search.substring(1).split("&");
@@ -23,13 +25,13 @@
                 let k = kvList[0]; let v = kvList[1];
                 query[k] = v;
             }
-            
+
             const fdata = await fetch("https://blog-wrap.qmc.workers.dev?id=" + query["id"] + "&draftKey=" + query["draft"]);
             const r = await fdata.json();
 
             const title = document.getElementById("articletitle");
             title.innerText = r.title;
-            
+
             const body = document.getElementById("atcbody");
             const atcbodies = r.body;
 
@@ -56,7 +58,7 @@
                     <div class="tag"><a href="#"></a>下書き</div>
                 </div>
                 <article id="atcbody">
-                    
+
                 </article>
             </section>
         </section>
