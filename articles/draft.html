@@ -27,7 +27,7 @@
             const fdata = await fetch("https://blog-wrap.qmc.workers.dev?id=" + query["id"] + "&draftKey=" + query["draft"]);
             const r = await fdata.json();
 
-            const article = document.getElementById("articletitle");
+            const title = document.getElementById("articletitle");
             title.innerText = r.title;
             
             const body = document.getElementById("atcbody");
