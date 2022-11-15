@@ -29,6 +29,16 @@
             const fdata = await fetch("https://blog-wrap.qmc.workers.dev?id=" + query["id"] + "&draftKey=" + query["draft"]);
             const r = await fdata.json();
 
+            const tagsElement = document.getElementsByClassName("tags")[0];
+            const categories = r.category;
+            for (let i = 0; i < categories.length; i++) {
+                let tag = tagsElement.appendChild(document.createElement("div"));
+                tag.className = "tag";
+                let tagLink = tag.appendChild(document.createElement("a"))
+                tagLink.href = "categories/" + categories[i].id;
+                tag.innertext += categories[i].name;
+            }
+
             const title = document.getElementById("articletitle");
             title.innerText = r.title;
 
