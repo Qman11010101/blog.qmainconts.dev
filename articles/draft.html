@@ -34,9 +34,10 @@
             for (let i = 0; i < categories.length; i++) {
                 let tag = tagsElement.appendChild(document.createElement("div"));
                 tag.className = "tag";
-                let tagLink = tag.appendChild(document.createElement("a"))
+                let tagLink = tag.appendChild(document.createElement("a"));
                 tagLink.href = "categories/" + categories[i].id;
-                tag.innertext += categories[i].name;
+                let tagName = tag.appendChild(document.createElement("span"));
+                tagName.innertext += categories[i].name;
             }
 
             const title = document.getElementById("articletitle");
@@ -67,7 +68,7 @@
                 <h1 id="articletitle"></h1>
                 <div class="tags">
                     <div class="tag"><img src="../assets/tag.svg" alt="タグ" width="18" height="18"></div>
-                    <div class="tag"><a href="#"></a>下書き</div>
+                    <div class="tag"><a href="#"></a><span>下書き</span></div>
                 </div>
                 <article id="atcbody">
 
