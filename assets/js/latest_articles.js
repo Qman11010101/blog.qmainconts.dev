@@ -1,4 +1,5 @@
-const latestArticle = await (await fetch("/latest.json")).json();
+const la_Pre = await fetch("/latest.json");
+const latestArticle = await (la_Pre).json();
 const recent = document.getElementById("recent-articles");
 for (let i = 0; i < latestArticle.length; i++) {
     let ID = latestArticle[i].id;
