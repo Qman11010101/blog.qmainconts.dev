@@ -8,7 +8,8 @@ async function getCategory() {
         tagBlock.className = "tag";
         let link = tagBlock.appendChild(document.createElement("a"));
         link.href = "/articles/category/" + ID;
-        tagBlock.innerText += name;
+        let nameBlock = tagBlock.appendChild(document.createElement("span"));
+        nameBlock.innerText = name;
     }
 }
 
